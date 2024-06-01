@@ -10,7 +10,7 @@ Nos cursos de 1º ciclo, ou seja, Licenciaturas, o regime de avaliação prefere
 O regime de avaliação continua contempla a realização de: 
 
 - 2 E-fólios (trabalhos escritos em formato digital)
-- 1 prova (E-fólio Global),com a duração de 90 minutos, acrescidos de uma tolerância de 30 minutos, totalizando 120 Minutos.
+- 1 prova (E-fólio Global),com a duração de 90 minutos, acrescidos de uma tolerância de 30 minutos, totalizando 120 Minutos, também online.
 
  O E-fólio Global tem lugar no final do semestre, com peso de, respetivamente, 60%.
 
