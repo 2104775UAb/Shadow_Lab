@@ -14,17 +14,6 @@ namespace UABNotas {
 
         internal View View { get; set; }
 
-        private void botaoNovaUC_Click(object sender, EventArgs e) {
-
-/*            frmNovo formNovo = new frmNovo();
-            if (formNovo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-             //   OnNovaUC(new NovaUCEventArgs { NomeUC = formNovo.NomeUC });
-            }*/
-
-           // view.BtnNovaUC_Click(null,null);
-            //view.ClicouNovaUC(sender, e);
-        }
 
         internal void MostrarListaUCS(ref List<UnidadesCurriculares> listaUCs) {
 
@@ -60,43 +49,32 @@ namespace UABNotas {
                 cellValues.Add(item.EfolioC);
                 cellValues.Add(item.PFolio);
 
-
                 if (item.Semestre == 1)
                     gridSemestre1.Rows.Add(cellValues.ToArray());
                 else
                     gridSemestre2.Rows.Add(cellValues.ToArray());
              
             }
-
-
-            // Criar uma lista de objetos para armazenar os valores das células
-
-
-            // Adicionar os valores das células à lista de objetos
-            // Adicionar uma nova linha à DataGridView com os valores das células
-
-
-
-            // Exemplo de teste
-            /* textBox2.Clear();
-             foreach (ListagemSemestreAno uc in listaUCs)
-             {
-                 textBox2.AppendText(uc.ToString() + Environment.NewLine);
-             }*/
-
         }
 
         private void BtnAdicionaUC_Click(object sender, EventArgs e)
         {
-            if (View != null)
-            {
 
 
-                Console.WriteLine("View_NovaUC");
-                //   View.ClicouNovaUC(sender, e);
-            }
+
+
+            /*    if (View != null)
+                {
+
+
+                    Console.WriteLine("View_NovaUC");
+                    //   View.ClicouNovaUC(sender, e);
+                }*/
         }
 
+        private void btnAdicionaUC2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

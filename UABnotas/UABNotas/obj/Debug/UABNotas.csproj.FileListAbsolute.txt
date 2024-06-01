@@ -27,3 +27,14 @@ C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\UABnotas\UABNotas\obj\Debug\UABNot
 C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\UABnotas\UABNotas\obj\Debug\UABNotas.pdb
 C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\UABnotas\UABNotas\obj\Debug\UABNotas.Properties.Resources.resources
 C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\UABnotas\UABNotas\obj\Debug\UABNotas.frmNovo.resources
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\bin\Debug\UABNotas.exe
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\bin\Debug\UABNotas.pdb
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\obj\Debug\UABNotas.csproj.AssemblyReference.cache
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\obj\Debug\UABNotas.csproj.SuggestedBindingRedirects.cache
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\obj\Debug\UABNotas.frmMain.resources
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\obj\Debug\UABNotas.frmNovo.resources
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\obj\Debug\UABNotas.Properties.Resources.resources
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\obj\Debug\UABNotas.csproj.GenerateResource.cache
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\obj\Debug\UABNotas.csproj.CoreCompileInputs.cache
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\obj\Debug\UABNotas.exe
+C:\UAB\2 ano - 2 semestre\Labprog\last_shadow\git_UABnotas\UABnotas\UABNotas\obj\Debug\UABNotas.pdb

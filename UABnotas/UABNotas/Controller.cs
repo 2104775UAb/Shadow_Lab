@@ -18,6 +18,7 @@ namespace UABNotas
         {
             // Define a string de conexão
             string baseDirectory = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
+            Console.WriteLine(baseDirectory);
             string databasePath = System.IO.Path.Combine(baseDirectory, "database", "uabnotas.mdf");
             connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={databasePath};Integrated Security=True";
 
@@ -39,19 +40,12 @@ namespace UABNotas
 
                 // Conecta eventos
                 view.CliqueNovaUC += CliqueNovaUC;
-
+               
 
                 view.PrecisoListaUCS += model.SolicitarListaUCS;
-
                 model.ListaDeUCNovas += view.AtualizaListaUCS;
-
-
                 view.AbaTabAlterada += OnAbaTabAlterada; // Conectar evento
-
-
                 view.NovaUC += View_NovaUC; // Conectar evento
-                
-
 
                 // Inicia a aplicação
                 view.IniciarAplicacao();
@@ -65,19 +59,21 @@ namespace UABNotas
         private void View_NovaUC(object sender, NovaUCEventArgs e)
         {
             
-            model.CriarNovaUC(e.NomeUC);
+            //model.CriarNovaUC(e.NomeUC);
         }
 
         private void CliqueNovaUC(object sender, System.EventArgs args)
         {
-            model.CriarNovaUC();
+            Console.WriteLine("View_NovaUC2");
+         //   model.CriarNovaUC("tste");
         }
+
+ 
 
         // Método para tratar a alteração da aba do TabControl
         private void OnAbaTabAlterada(object sender, EventArgs e)
         {
-            Console.WriteLine("Aba do TabControl alterada");
-            // Lógica adicional para tratar a mudança de aba pode ser adicionada aqui
+         
         }
     }
 }

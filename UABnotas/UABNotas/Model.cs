@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -45,15 +46,6 @@ namespace UABNotas
             }
         }
 
-        public void CriarNovaUC()
-        {
-            UnidadesCurriculares uc = new UnidadesCurriculares();
-            //exemplo de teste
-            uc.ID = 1;
-            uc.Nome = "Nova Unidade Teste";
-            UCS.Add(uc);
-            ListaDeUCNovas();
-        }
 
         public void CriarNovaUC(string nomeUC)
         {
@@ -141,11 +133,11 @@ namespace UABNotas
         {
             try
             {
-                string query = "SELECT codigoUC, descricao FROM linhasUC WHERE ano=@ano";
+                string query = "SELECT * FROM UC WHERE semestre=@semestre AND NOT EXISTS ( SELECT * FROM linhasUC WHERE linhasUC.codigoUC = UC.codigoUC and linhasUC.ano=@ano) ORDER BY descricao";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@semestre", semestre);
                     command.Parameters.AddWithValue("@ano", ano);
-
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -160,13 +152,56 @@ namespace UABNotas
                 }
 
                 // Notificar que a lista de UCs foi atualizada
-                ListaDeUCNovas?.Invoke();
+                //ListaDeUCNovas?.Invoke();
             }
             catch (SqlException ex)
             {
                 throw new DatabaseException("Erro ao obter dados da tabela linhasUC.", ex);
             }
         }
+
+
+        public bool InserirUCSemestre(int semestre, int ano, int codigoUC, float efolioA, float efolioB, float efolioC, float pFolio, char tipoAvaliacao)
+        {
+
+            //
+            try
+            {
+                string query = "INSERT INTO linhasUC (codigoUC, ano, efolioA, efolioB, efolioC, pFolio,tipoAvaliacao  ) " +
+                    "VALUES (@codigoUC, @ano, @efolioA, @efolioB, @efolioC, @pFolio, @tipoAvaliacao)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@codigoUC", codigoUC);
+                    command.Parameters.AddWithValue("@ano", ano);
+                    command.Parameters.AddWithValue("@efolioA", efolioA);
+                    command.Parameters.AddWithValue("@efolioB", efolioB);
+                    command.Parameters.AddWithValue("@efolioC", efolioC);
+                    command.Parameters.AddWithValue("@pFolio", pFolio);
+                    command.Parameters.AddWithValue("@tipoAvaliacao", tipoAvaliacao);
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        // Notificar que a lista de UCs foi atualizada
+                        ListaDeUCNovas?.Invoke();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new DatabaseException("Erro ao obter dados da tabela linhasUC.", ex);
+                
+            }
+
+        }
+
+
+
+
 
 
 

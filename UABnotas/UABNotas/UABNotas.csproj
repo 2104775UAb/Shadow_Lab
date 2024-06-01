@@ -68,7 +68,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelNovo.cs" />
     <Compile Include="ViewNovo.cs" />
     <Compile Include="ExceptionDataBase.cs" />
     <Compile Include="frmNovo.cs">

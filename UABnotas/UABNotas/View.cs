@@ -56,17 +56,17 @@ namespace UABNotas
             PreparaMostraListaAnoSemestre();
             // Conectar evento de alteração de aba
             window.tabAnos.SelectedIndexChanged += TabAnos_SelectedIndexChanged;
-            window.btnAdicionaUC.Click += OnCliqueNovaUC;
+            window.btnAdicionaUC1.Click += OnCliqueNovaUC;
+            window.btnAdicionaUC2.Click += OnCliqueNovaUC2;
 
             window.ShowDialog();
 ;
         }
 
+        // Actualiza a lista pelo ano e semestre, é chamado pelo modal quando existe novo unidade ou actualização de dados
         public void AtualizaListaUCS()
         {
-            Console.WriteLine("AtualizaListaUCS");
-            PrecisoListaUCS(ref listaUCs);
-            MostraListaUCs();
+            PreparaMostraListaAnoSemestre();
         }
 
         private void MostraListaUCs()
@@ -98,19 +98,24 @@ namespace UABNotas
 
         protected virtual void OnNovaUC(NovaUCEventArgs e)
         {
-            NovaUC?.Invoke(this, e);
+         //   NovaUC?.Invoke(this, e);
         }
 
  
         protected virtual void OnCliqueNovaUC(object sender, EventArgs e)
         {
-            Console.WriteLine("View_NovaUC");
-            windowNovo.AtivarViewLog(window.tabAnos.SelectedIndex + 1);
-            windowNovo.AlterarLog("teste");
+            
+            windowNovo.AtivarViewNovo(window.tabAnos.SelectedIndex + 1, 1, model);
+            
 
-            CliqueNovaUC?.Invoke(sender, e);
+           // CliqueNovaUC?.Invoke(sender, e);
         }
 
- 
+        protected virtual void OnCliqueNovaUC2(object sender, EventArgs e)
+        {
+            windowNovo.AtivarViewNovo(window.tabAnos.SelectedIndex + 1, 2, model);
+        }
+
+
     }
 }

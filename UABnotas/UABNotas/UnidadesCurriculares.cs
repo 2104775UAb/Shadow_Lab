@@ -152,5 +152,19 @@ namespace UABNotas
     }
 
 
+    public class FormAdicionaUCValores
+    {
+        public int CodigoUC { get; set; }
+        public float NotaEfolioA { get; set; }
+        public float NotaEfolioB { get; set; }
+        public float NotaEfolioC { get; set; }
+        public float NotaGlobal { get; set; }
+        public float NotaExame { get; set; }
+        public char tipoAvaliacao { get; set; }
+
+
+    }
+
+
 
 }
