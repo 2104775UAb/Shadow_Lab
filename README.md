@@ -25,4 +25,4 @@ Ou seja, um aluno que tenha exatamente 3,5 valores na soma dos E-fólio A e B e 
 
 Os estudantes podem, no entanto, em devido tempo, optar por um único momento de avaliação, realizando, então uma prova de Avaliação Final (Exame).
 
-O exame, é presencial ou em Wiseflow se a Unidade Curricular já estiver neste regime, e ten a duração de 120 minutos, acrescidos da tolerância estabelecida superiormente, com o peso de 100%.
+O exame, é presencial ou em Wiseflow se a Unidade Curricular já estiver neste regime, e tem a duração de 120 minutos, acrescidos da tolerância estabelecida superiormente, com o peso de 100%.
