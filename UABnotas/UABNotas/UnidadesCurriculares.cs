@@ -100,5 +100,57 @@ namespace UABNotas
 
     }
 
+    public class LinhaUC
+    {
+        public int Id { get; set; }
+        public byte Ano { get; set; }
+        public string Obs { get; set; }
+        public byte Semestre { get; set; }
+        public string Descricao { get; set; }
+        public decimal EfolioA { get; set; }
+        public decimal EfolioB { get; set; }
+        public decimal EfolioC { get; set; }
+        public decimal PFolio { get; set; }
+        public int CodigoUC { get; set; }
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, Ano: {Ano}, Obs: {Obs}, Semestre: {Semestre}, Descricao: {Descricao}, EfolioA: {EfolioA}, EfolioB: {EfolioB}, EfolioC: {EfolioC}, PFolio: {PFolio}, CodigoUC: {CodigoUC}";
+        }
+
+
+        public LinhaUC Clone()
+        {
+            LinhaUC clone = new LinhaUC();
+            clone.Id = this.Id;
+            clone.Ano = this.Ano;
+            clone.CodigoUC = this.CodigoUC;
+            return clone;
+        }
+
+    }
+
+    public interface IUCInfo
+    {
+        int CodigoUC { get; set; }
+        string Descricao { get; set; }
+    }
+    public class UCInfo : IUCInfo
+    {
+        public int CodigoUC { get; set; }
+        public string Descricao { get; set; }
+
+        public override string ToString()
+        {
+            return $"CodigoUC: {CodigoUC}, Descricao: {Descricao}";
+        }
+
+        public UCInfo Clone()
+        {
+            return new UCInfo { CodigoUC = this.CodigoUC, Descricao = this.Descricao };
+        }
+    }
+
+
 
 }

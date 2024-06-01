@@ -1,28 +1,16 @@
 ﻿using System;
-using System.Runtime.Serialization;
+using System.Data.SqlClient;
 
 namespace UABNotas
 {
-
-    [Serializable]
-    internal class ExceptionDataBase : Exception
+    public class DatabaseException : Exception
     {
-        public ExceptionDataBase()
-        {
-        }
+        public DatabaseException() { }
 
-        public ExceptionDataBase(string message) : base(message)
-        {
-        }
+        public DatabaseException(string message)
+            : base(message) { }
 
-        public ExceptionDataBase(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected ExceptionDataBase(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
+        public DatabaseException(string message, Exception inner)
+            : base(message, inner) { }
     }
-
-
 }
