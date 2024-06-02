@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="exame.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="hnota.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="exames2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="nota2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -125,7 +137,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC0
-        FgAAAk1TRnQBSQFMAgEBAgEAARgBAAEYAQABIAEAASABAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAGA
+        FgAAAk1TRnQBSQFMAgEBAgEAAUgBAAFIAQABIAEAASABAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAGA
         AwABIAMAAQEBAAEQBgABIP8AKQAB/wF/Ad0BdwJXAREBMwHNARoBrAEWAe8BKgE1AUsBmwFvAf8BfywA
         Af8BfwG9AXsB1QFuAawBZQEGAWEB5QFgAWoBZQFSAW4BewF3Af8Bf6gAAd4BewF4AVsB8AEuAcwBFgHM
         ARYB7AEWAe0BFgHtARYB7AEWAewBFgHMARYBzQEeAVUBSwG8AXMB/wF/IgAB3gF7AfYBbgGLAWUB5QFg

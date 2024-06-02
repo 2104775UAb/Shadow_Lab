@@ -36,9 +36,14 @@ namespace UABNotas
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.botaoNovaForma = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtIDAluno = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PDFexport = new System.Windows.Forms.Button();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,6 +62,7 @@ namespace UABNotas
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnAdicionaUC1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblMediaSemestre2 = new System.Windows.Forms.Label();
             this.btnAdicionaUC2 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +71,8 @@ namespace UABNotas
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exame = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hnota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCodigoUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +80,9 @@ namespace UABNotas
             this.eFolioB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eFolioC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pFolio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exames2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMediaSemestre1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabAnos.SuspendLayout();
@@ -81,13 +92,6 @@ namespace UABNotas
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // botaoNovaForma
-            // 
-            this.botaoNovaForma.Location = new System.Drawing.Point(0, 0);
-            this.botaoNovaForma.Name = "botaoNovaForma";
-            this.botaoNovaForma.Size = new System.Drawing.Size(75, 23);
-            this.botaoNovaForma.TabIndex = 0;
             // 
             // button1
             // 
@@ -99,20 +103,88 @@ namespace UABNotas
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
+            this.panel1.Controls.Add(this.txtIDAluno);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.PDFexport);
+            this.panel1.Controls.Add(this.txtNome);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1340, 86);
+            this.panel1.Size = new System.Drawing.Size(1443, 91);
             this.panel1.TabIndex = 0;
+            // 
+            // txtIDAluno
+            // 
+            this.txtIDAluno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIDAluno.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIDAluno.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtIDAluno.Location = new System.Drawing.Point(288, 55);
+            this.txtIDAluno.Name = "txtIDAluno";
+            this.txtIDAluno.Size = new System.Drawing.Size(91, 20);
+            this.txtIDAluno.TabIndex = 17;
+            this.txtIDAluno.Validated += new System.EventHandler(this.txtIDAluno_Validated);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label7.Location = new System.Drawing.Point(230, 54);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 21);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Aluno:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(844, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 18);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Média Total:";
+            // 
+            // PDFexport
+            // 
+            this.PDFexport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PDFexport.Location = new System.Drawing.Point(1039, 47);
+            this.PDFexport.Name = "PDFexport";
+            this.PDFexport.Size = new System.Drawing.Size(143, 32);
+            this.PDFexport.TabIndex = 13;
+            this.PDFexport.Text = "Exportar para PDF";
+            this.PDFexport.UseVisualStyleBackColor = true;
+            this.PDFexport.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtNome
+            // 
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNome.Location = new System.Drawing.Point(444, 55);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(385, 20);
+            this.txtNome.TabIndex = 3;
+            this.txtNome.Validated += new System.EventHandler(this.txtNome_Validated);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label4.Location = new System.Drawing.Point(383, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 21);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Nome:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label1.Location = new System.Drawing.Point(238, 23);
+            this.label1.Location = new System.Drawing.Point(230, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(353, 28);
             this.label1.TabIndex = 1;
@@ -122,9 +194,9 @@ namespace UABNotas
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.IndianRed;
             this.pictureBox1.Image = global::UABNotas.Properties.Resources.uab;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(187, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -133,9 +205,9 @@ namespace UABNotas
             // 
             this.panel3.BackColor = System.Drawing.Color.Azure;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 86);
+            this.panel3.Location = new System.Drawing.Point(0, 91);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(30, 504);
+            this.panel3.Size = new System.Drawing.Size(24, 522);
             this.panel3.TabIndex = 6;
             // 
             // tabAnos
@@ -146,10 +218,10 @@ namespace UABNotas
             this.tabAnos.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabAnos.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tabAnos.ItemSize = new System.Drawing.Size(50, 20);
-            this.tabAnos.Location = new System.Drawing.Point(30, 86);
+            this.tabAnos.Location = new System.Drawing.Point(24, 91);
             this.tabAnos.Name = "tabAnos";
             this.tabAnos.SelectedIndex = 0;
-            this.tabAnos.Size = new System.Drawing.Size(1310, 26);
+            this.tabAnos.Size = new System.Drawing.Size(1419, 26);
             this.tabAnos.TabIndex = 7;
             // 
             // tabPage1
@@ -157,7 +229,7 @@ namespace UABNotas
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1302, 0);
+            this.tabPage1.Size = new System.Drawing.Size(1411, 0);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Tag = "1";
             this.tabPage1.Text = "1º Ano";
@@ -168,7 +240,7 @@ namespace UABNotas
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1267, 0);
+            this.tabPage2.Size = new System.Drawing.Size(1308, 0);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2º Ano";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -178,7 +250,7 @@ namespace UABNotas
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1267, 0);
+            this.tabPage3.Size = new System.Drawing.Size(1308, 0);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "3º Ano";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -186,9 +258,9 @@ namespace UABNotas
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(30, 112);
+            this.panel2.Location = new System.Drawing.Point(24, 117);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1310, 10);
+            this.panel2.Size = new System.Drawing.Size(1419, 10);
             this.panel2.TabIndex = 8;
             // 
             // tableLayoutPanel1
@@ -204,13 +276,13 @@ namespace UABNotas
             this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(30, 122);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 127);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 387F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1310, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1419, 450);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // gridSemestre1
@@ -226,7 +298,9 @@ namespace UABNotas
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.dataGridViewTextBoxColumn7,
+            this.exame,
+            this.hnota});
             this.gridSemestre1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSemestre1.Location = new System.Drawing.Point(3, 66);
             this.gridSemestre1.MultiSelect = false;
@@ -237,7 +311,7 @@ namespace UABNotas
             this.gridSemestre1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridSemestre1.ShowCellToolTips = false;
             this.gridSemestre1.ShowEditingIcon = false;
-            this.gridSemestre1.Size = new System.Drawing.Size(643, 381);
+            this.gridSemestre1.Size = new System.Drawing.Size(697, 381);
             this.gridSemestre1.TabIndex = 14;
             // 
             // gridSemestre2
@@ -253,9 +327,11 @@ namespace UABNotas
             this.eFolioA,
             this.eFolioB,
             this.eFolioC,
-            this.pFolio});
+            this.pFolio,
+            this.exames2,
+            this.nota2});
             this.gridSemestre2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridSemestre2.Location = new System.Drawing.Point(652, 66);
+            this.gridSemestre2.Location = new System.Drawing.Point(706, 66);
             this.gridSemestre2.MultiSelect = false;
             this.gridSemestre2.Name = "gridSemestre2";
             this.gridSemestre2.ReadOnly = true;
@@ -264,7 +340,7 @@ namespace UABNotas
             this.gridSemestre2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridSemestre2.ShowCellToolTips = false;
             this.gridSemestre2.ShowEditingIcon = false;
-            this.gridSemestre2.Size = new System.Drawing.Size(655, 381);
+            this.gridSemestre2.Size = new System.Drawing.Size(710, 381);
             this.gridSemestre2.TabIndex = 12;
             // 
             // label3
@@ -272,11 +348,11 @@ namespace UABNotas
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.SlateGray;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(652, 0);
+            this.label3.Location = new System.Drawing.Point(706, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(655, 18);
+            this.label3.Size = new System.Drawing.Size(710, 18);
             this.label3.TabIndex = 8;
             this.label3.Text = "Segundo Semestre";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -286,22 +362,24 @@ namespace UABNotas
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.GhostWhite;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(643, 18);
+            this.label2.Size = new System.Drawing.Size(697, 18);
             this.label2.TabIndex = 10;
             this.label2.Text = "Primeiro Semestre";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lblMediaSemestre1);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.btnAdicionaUC1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 21);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(643, 39);
+            this.panel4.Size = new System.Drawing.Size(697, 39);
             this.panel4.TabIndex = 15;
             // 
             // button3
@@ -341,12 +419,23 @@ namespace UABNotas
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lblMediaSemestre2);
             this.panel5.Controls.Add(this.btnAdicionaUC2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(652, 21);
+            this.panel5.Location = new System.Drawing.Point(706, 21);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(655, 39);
+            this.panel5.Size = new System.Drawing.Size(710, 39);
             this.panel5.TabIndex = 16;
+            // 
+            // lblMediaSemestre2
+            // 
+            this.lblMediaSemestre2.AutoSize = true;
+            this.lblMediaSemestre2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMediaSemestre2.Location = new System.Drawing.Point(586, 10);
+            this.lblMediaSemestre2.Name = "lblMediaSemestre2";
+            this.lblMediaSemestre2.Size = new System.Drawing.Size(58, 18);
+            this.lblMediaSemestre2.TabIndex = 15;
+            this.lblMediaSemestre2.Text = "Média:";
             // 
             // btnAdicionaUC2
             // 
@@ -413,6 +502,20 @@ namespace UABNotas
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 50;
             // 
+            // exame
+            // 
+            this.exame.HeaderText = "Exame";
+            this.exame.Name = "exame";
+            this.exame.ReadOnly = true;
+            this.exame.Width = 50;
+            // 
+            // hnota
+            // 
+            this.hnota.HeaderText = "Nota";
+            this.hnota.Name = "hnota";
+            this.hnota.ReadOnly = true;
+            this.hnota.Width = 80;
+            // 
             // col_id
             // 
             this.col_id.HeaderText = "id";
@@ -462,18 +565,44 @@ namespace UABNotas
             this.pFolio.ReadOnly = true;
             this.pFolio.Width = 50;
             // 
+            // exames2
+            // 
+            this.exames2.HeaderText = "Exame";
+            this.exames2.Name = "exames2";
+            this.exames2.ReadOnly = true;
+            this.exames2.Width = 50;
+            // 
+            // nota2
+            // 
+            this.nota2.HeaderText = "Nota";
+            this.nota2.Name = "nota2";
+            this.nota2.ReadOnly = true;
+            this.nota2.Width = 80;
+            // 
+            // lblMediaSemestre1
+            // 
+            this.lblMediaSemestre1.AutoSize = true;
+            this.lblMediaSemestre1.BackColor = System.Drawing.Color.White;
+            this.lblMediaSemestre1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMediaSemestre1.Location = new System.Drawing.Point(581, 10);
+            this.lblMediaSemestre1.Name = "lblMediaSemestre1";
+            this.lblMediaSemestre1.Size = new System.Drawing.Size(58, 18);
+            this.lblMediaSemestre1.TabIndex = 17;
+            this.lblMediaSemestre1.Text = "Média:";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1340, 590);
+            this.ClientSize = new System.Drawing.Size(1443, 613);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabAnos);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MaximizeBox = false;
             this.Name = "frmMain";
@@ -487,19 +616,21 @@ namespace UABNotas
             ((System.ComponentModel.ISupportInitialize)(this.gridSemestre1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSemestre2)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button botaoNovaForma;
-
+        
 
         public System.Windows.Forms.Button btnAdicionaUC1;
         public System.Windows.Forms.Button btnAdicionaUC2;
         public System.Windows.Forms.TabControl tabAnos; // Público
+        public Button PDFexport;
         private Button button1;
         private Panel panel1;
         private PictureBox pictureBox1;
@@ -520,6 +651,14 @@ namespace UABNotas
         private Button button3;
         private Panel panel5;
         
+        private Label label4;
+        
+        private Label label6;
+        private Label label7;
+        private Label lblMediaSemestre2;
+
+        public TextBox txtIDAluno;
+        public TextBox txtNome;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -527,6 +666,8 @@ namespace UABNotas
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn exame;
+        private DataGridViewTextBoxColumn hnota;
         private DataGridViewTextBoxColumn col_id;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn colCodigoUC;
@@ -534,5 +675,8 @@ namespace UABNotas
         private DataGridViewTextBoxColumn eFolioB;
         private DataGridViewTextBoxColumn eFolioC;
         private DataGridViewTextBoxColumn pFolio;
+        private DataGridViewTextBoxColumn exames2;
+        private DataGridViewTextBoxColumn nota2;
+        private Label lblMediaSemestre1;
     }
 }

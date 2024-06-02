@@ -62,7 +62,7 @@ namespace UABNotas
                 NotaEfolioB = (float)notaEfolioB.Value,
                 NotaEfolioC = (float)notaEfolioC.Value,
                 NotaGlobal = (float)notaGlobal.Value,
-                tipoAvaliacao = tipoAvaliacao
+                TipoAvaliacao = tipoAvaliacao
             };
 
             listaValores.Add(valores);

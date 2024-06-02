@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace UABNotas
 {
@@ -31,19 +24,16 @@ namespace UABNotas
         }
         internal void AtivarViewNovo(int ano, int semestre,Model m)
         {
-            if (formNovo == null) formNovo = new frmNovo();
+            //if (formNovo == null) formNovo = new frmNovo();
+            formNovo = new frmNovo();
             guardaAno = ano;
             guardaSemestre = semestre;
-
             model = m;
             listaUCs = new List<UCInfo>(); // Inicializar a lista
             model.ObterUCCombox(ano, semestre, ref listaUCs);
             formNovo.btnSalvar.Click += OnCliqueSalvar;
             formNovo.ConstruirListaCombobox(listaUCs);
-
             MostraFrmNovo();
-
-
         }
 
         protected virtual void OnCliqueSalvar(object sender, EventArgs e)
@@ -53,20 +43,35 @@ namespace UABNotas
 {
     Console.WriteLine($"CodigoUC: {valores.CodigoUC}, NotaEfolioA: {valores.NotaEfolioA}");
 }*/
+            
+            System.Windows.Forms.Button btnSalvar = sender as System.Windows.Forms.Button;
+            if (btnSalvar != null)
+            {
+                btnSalvar.Enabled = false;
+            }
 
 
             List<FormAdicionaUCValores> listaValores = new List<FormAdicionaUCValores>();
             formNovo.RetornaValoresForm(ref listaValores);
             var valores = listaValores[0];
 
-            if (model.InserirUCSemestre(guardaSemestre, guardaAno, valores.CodigoUC, valores.NotaEfolioA, valores.NotaEfolioB, valores.NotaEfolioC, valores.NotaGlobal, valores.tipoAvaliacao))
+            
+            if (model.InserirUCSemestre(guardaSemestre, guardaAno, valores.CodigoUC, valores.NotaEfolioA, valores.NotaEfolioB, valores.NotaEfolioC, valores.NotaGlobal, valores.TipoAvaliacao))
             {
+                if (btnSalvar != null)
+                {
+                    btnSalvar.Enabled = true;
+                }
                 formNovo.FechaNovoForm();
             }
-            else {
+            else 
+            {
                 Console.WriteLine("Erro  a gravar");
             }
-            
+
+
+
+
         }
 
 

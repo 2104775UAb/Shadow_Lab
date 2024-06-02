@@ -229,7 +229,10 @@
             this.Controls.Add(this.cmbUC);
             this.Controls.Add(this.btnSalvar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmNovo";
+            this.ShowInTaskbar = false;
             this.Text = "Nova Unidade Curricular";
             this.Load += new System.EventHandler(this.frmNovo_Load);
             this.groupBox1.ResumeLayout(false);
