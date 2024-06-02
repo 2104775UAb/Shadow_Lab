@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
-
 
 namespace UABNotas
 {
@@ -11,7 +11,6 @@ namespace UABNotas
         private View view;
         private SqlConnection connection;
         private string connectionString;
- 
 
         public Controller()
         {
@@ -34,9 +33,8 @@ namespace UABNotas
                 view = new View(null);
                 view.SetModel(model); // Atualiza a View para ter referência ao Model
 
-
                 // Conecta eventos
-                view.CliqueNovaUC += CliquePDF;
+                view.CliquePDF += CliquePDF;
                 view.CliqueNovaUC += CliqueNovaUC;
 
                 model.ListaDeUCNovas += view.AtualizaListaUCS;
@@ -44,10 +42,8 @@ namespace UABNotas
                 // Conectar o evento para mostrar o nome
                 view.TxtNomeValidated += NomeID_Validated;
 
-
                 // Inicia a aplicação
                 view.IniciarAplicacao();
-
             }
             catch (SqlException ex)
             {
@@ -55,29 +51,29 @@ namespace UABNotas
             }
         }
 
- 
         private void CliqueNovaUC(object sender, System.EventArgs args)
         {
             Console.WriteLine("View_NovaUC2");
-         //   model.CriarNovaUC("tste");
+
         }
+
+        // Chama PDF 
 
         private void CliquePDF(object sender, System.EventArgs args)
         {
-            Console.WriteLine("View_NovaUC2");
-            //   model.CriarNovaUC("tste");
+            List<LinhaUC> listaUnidades = new List<LinhaUC>();
+            model.ObterLinhasPDF(ref listaUnidades);
+            view.MostraCliquePDF(listaUnidades);
         }
 
         private void NomeID_Validated(object sender, EventArgs e)
         {
             // Implementação do que deve ocorrer quando txtNome é validado
-           
         }
 
         // Método para tratar a alteração da aba do TabControl
         private void OnAbaTabAlterada(object sender, EventArgs e)
         {
-         
         }
     }
 }

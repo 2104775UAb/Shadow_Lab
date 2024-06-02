@@ -20,8 +20,6 @@ namespace UABNotas
         public delegate void TxtNomeValidatedEventHandler(object sender, EventArgs e);
         public event TxtNomeValidatedEventHandler TxtNomeValidated;
 
-
-
         internal View(Model m)
         {
             model = m;
@@ -29,7 +27,6 @@ namespace UABNotas
 
         public void SetModel(Model m)
         {
-            //console.writeline("SetModel");
             model = m;
             windowNovo = new ViewNovo(window);
         }
@@ -59,15 +56,13 @@ namespace UABNotas
             // Mostra nas caixas de texto os dados do aluno
             MostraDadosAluno();
             window.ShowDialog();
-
         }
 
-        // Actualiza a lista pelo ano e semestre, é chamado pelo modal quando existe novo unidade ou actualização de dados
+        // Atualiza a lista pelo ano e semestre, é chamado pelo modal quando existe nova unidade ou atualização de dados
         public void AtualizaListaUCS()
         {
             PreparaMostraListaAnoSemestre();
         }
-
 
         public void MostraDadosAluno()
         {
@@ -76,28 +71,24 @@ namespace UABNotas
             window.MostraAluno(aluno_mostra);
         }
 
-
-        // Método para disparar o evento para actualizar o nome
+        // Método para disparar o evento para atualizar o nome
         private void TxtNome_Validated(object sender, EventArgs e)
         {
-            
-            model.ActualizaAluno(window.txtIDAluno.Text, window.txtNome.Text  );
-          //  TxtNomeValidated?.Invoke(sender, e);
+            model.ActualizaAluno(window.txtIDAluno.Text, window.txtNome.Text);
         }
 
         private void TabAnos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Disparar o evento AbaTabAlterada quando a aba for alterada
             PreparaMostraListaAnoSemestre();
         }
 
-        //Abre novo form para adicionar uma nova unidade na lista, para o semestre 1
+        // Abre novo form para adicionar uma nova unidade na lista, para o semestre 1
         protected virtual void OnCliqueNovaUC(object sender, EventArgs e)
         {
             windowNovo.AtivarViewNovo(window.TabAnos.SelectedIndex + 1, 1, model);
         }
 
-        //Abre novo form para adicionar uma nova unidade na lista, para o semestre 2
+        // Abre novo form para adicionar uma nova unidade na lista, para o semestre 2
         protected virtual void OnCliqueNovaUC2(object sender, EventArgs e)
         {
             windowNovo.AtivarViewNovo(window.TabAnos.SelectedIndex + 1, 2, model);
@@ -106,12 +97,12 @@ namespace UABNotas
         // Exporta PDF
         protected virtual void OnCliquePDF(object sender, EventArgs e)
         {
-            List<LinhaUC> listaUnidades = new List<LinhaUC>();
-            model.ObterLinhasPDF(ref listaUnidades);
-            window.MostraPDF(listaUnidades);
+            CliquePDF?.Invoke(this, EventArgs.Empty);
         }
 
-
-
+        public virtual void MostraCliquePDF(List<LinhaUC> linhas)
+        {
+            window.MostraPDF(linhas);
+        }
     }
 }
