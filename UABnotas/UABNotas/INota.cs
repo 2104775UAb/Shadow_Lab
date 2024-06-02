@@ -6,7 +6,7 @@
     }
 
 
-    // Para caculo das médias adiciona a nota e verifica se >=9.5 e soma a quantidade de items para dar a média certa
+    // Para calculo das médias adiciona a nota e verifica se >=9.5 e soma a quantidade de items para dar a média certa
     public interface ICalculadoraNota
     {
         void AdicionarNota(decimal nota);
