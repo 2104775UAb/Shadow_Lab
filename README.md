@@ -19,7 +19,7 @@ Só é considerado aprovado na UC, o estudante que obtenha nas notas parciais, a
 - Somatório dos E-fólios, nota igual ou superior a 3,5 valores;
 - Prova E-fólio Global, nota igual ou superior a 5,5 valores.
 
-No final, o somatório das avaliações parciais (E-fólios A e B + E-fólio Global) deverá ser obrigatoriamente igual ou superior a 9,5 valores.
+No final, o somatório das avaliações parciais (E-fólios A e B (e também C em alguns caso) + E-fólio Global) deverá ser obrigatoriamente igual ou superior a 9,5 valores.
 
 Ou seja, por exemplo, um aluno que tenha exatamente 3,5 valores na soma dos E-fólios A e B e exatamente 5,5 valores no E-fólio global, não aprova, pois apesar de as notas sem as mínimas de cada prova, o resultado das somas todas é 9 valores.
 
