@@ -59,7 +59,7 @@ namespace UABNotas
                 float somaEfolios = valores.NotaEfolioA + valores.NotaEfolioB + valores.NotaEfolioC;
                 if (somaEfolios>8)
                 { 
-                    MessageBox.Show($"Soma Notas efolios não pode ser superior a 8", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"A soma das notas dos E-fólios A, B e C não pode ser superior a 8.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 //Não deixa adicionar nota global se não tiver 3.5
