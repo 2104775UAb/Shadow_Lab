@@ -40,7 +40,6 @@ namespace UABNotas
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtIDAluno = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.PDFexport = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,16 +53,6 @@ namespace UABNotas
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gridSemestre1 = new System.Windows.Forms.DataGridView();
-            this.gridSemestre2 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnAdicionaUC1 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lblMediaSemestre2 = new System.Windows.Forms.Label();
-            this.btnAdicionaUC2 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +62,7 @@ namespace UABNotas
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exame = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hnota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridSemestre2 = new System.Windows.Forms.DataGridView();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCodigoUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +72,19 @@ namespace UABNotas
             this.pFolio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exames2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.lblMediaSemestre1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnAdicionaUC1 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblMediaSemestre2 = new System.Windows.Forms.Label();
+            this.btnAdicionaUC2 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabAnos.SuspendLayout();
@@ -105,7 +107,6 @@ namespace UABNotas
             this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.txtIDAluno);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.PDFexport);
             this.panel1.Controls.Add(this.txtNome);
             this.panel1.Controls.Add(this.label4);
@@ -138,16 +139,6 @@ namespace UABNotas
             this.label7.Size = new System.Drawing.Size(54, 21);
             this.label7.TabIndex = 16;
             this.label7.Text = "Aluno:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(844, 55);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 18);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Média Total:";
             // 
             // PDFexport
             // 
@@ -240,7 +231,7 @@ namespace UABNotas
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1308, 0);
+            this.tabPage2.Size = new System.Drawing.Size(1411, 0);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2º Ano";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -250,7 +241,7 @@ namespace UABNotas
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1308, 0);
+            this.tabPage3.Size = new System.Drawing.Size(1411, 0);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "3º Ano";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -313,145 +304,6 @@ namespace UABNotas
             this.gridSemestre1.ShowEditingIcon = false;
             this.gridSemestre1.Size = new System.Drawing.Size(697, 381);
             this.gridSemestre1.TabIndex = 14;
-            // 
-            // gridSemestre2
-            // 
-            this.gridSemestre2.AllowUserToAddRows = false;
-            this.gridSemestre2.AllowUserToDeleteRows = false;
-            this.gridSemestre2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gridSemestre2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSemestre2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_id,
-            this.Column1,
-            this.colCodigoUC,
-            this.eFolioA,
-            this.eFolioB,
-            this.eFolioC,
-            this.pFolio,
-            this.exames2,
-            this.nota2});
-            this.gridSemestre2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridSemestre2.Location = new System.Drawing.Point(706, 66);
-            this.gridSemestre2.MultiSelect = false;
-            this.gridSemestre2.Name = "gridSemestre2";
-            this.gridSemestre2.ReadOnly = true;
-            this.gridSemestre2.RowHeadersVisible = false;
-            this.gridSemestre2.RowTemplate.Height = 25;
-            this.gridSemestre2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridSemestre2.ShowCellToolTips = false;
-            this.gridSemestre2.ShowEditingIcon = false;
-            this.gridSemestre2.Size = new System.Drawing.Size(710, 381);
-            this.gridSemestre2.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.SlateGray;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(706, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(710, 18);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Segundo Semestre";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.GhostWhite;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(697, 18);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Primeiro Semestre";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lblMediaSemestre1);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.btnAdicionaUC1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 21);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(697, 39);
-            this.panel4.TabIndex = 15;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.ImageList = this.imageList1;
-            this.button3.Location = new System.Drawing.Point(36, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(38, 33);
-            this.button3.TabIndex = 12;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "sign-add-icon.png");
-            this.imageList1.Images.SetKeyName(1, "sign-error-icon.png");
-            // 
-            // btnAdicionaUC1
-            // 
-            this.btnAdicionaUC1.FlatAppearance.BorderSize = 0;
-            this.btnAdicionaUC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionaUC1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAdicionaUC1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdicionaUC1.ImageIndex = 0;
-            this.btnAdicionaUC1.ImageList = this.imageList1;
-            this.btnAdicionaUC1.Location = new System.Drawing.Point(3, 3);
-            this.btnAdicionaUC1.Name = "btnAdicionaUC1";
-            this.btnAdicionaUC1.Size = new System.Drawing.Size(37, 33);
-            this.btnAdicionaUC1.TabIndex = 11;
-            this.btnAdicionaUC1.Tag = "1";
-            this.btnAdicionaUC1.UseVisualStyleBackColor = true;
-            this.btnAdicionaUC1.Click += new System.EventHandler(this.BtnAdicionaUC_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lblMediaSemestre2);
-            this.panel5.Controls.Add(this.btnAdicionaUC2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(706, 21);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(710, 39);
-            this.panel5.TabIndex = 16;
-            // 
-            // lblMediaSemestre2
-            // 
-            this.lblMediaSemestre2.AutoSize = true;
-            this.lblMediaSemestre2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMediaSemestre2.Location = new System.Drawing.Point(586, 10);
-            this.lblMediaSemestre2.Name = "lblMediaSemestre2";
-            this.lblMediaSemestre2.Size = new System.Drawing.Size(58, 18);
-            this.lblMediaSemestre2.TabIndex = 15;
-            this.lblMediaSemestre2.Text = "Média:";
-            // 
-            // btnAdicionaUC2
-            // 
-            this.btnAdicionaUC2.FlatAppearance.BorderSize = 0;
-            this.btnAdicionaUC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionaUC2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAdicionaUC2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdicionaUC2.ImageIndex = 0;
-            this.btnAdicionaUC2.ImageList = this.imageList1;
-            this.btnAdicionaUC2.Location = new System.Drawing.Point(3, 3);
-            this.btnAdicionaUC2.Name = "btnAdicionaUC2";
-            this.btnAdicionaUC2.Size = new System.Drawing.Size(37, 33);
-            this.btnAdicionaUC2.TabIndex = 12;
-            this.btnAdicionaUC2.Tag = "2";
-            this.btnAdicionaUC2.UseVisualStyleBackColor = true;
-            this.btnAdicionaUC2.Click += new System.EventHandler(this.btnAdicionaUC2_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -516,6 +368,35 @@ namespace UABNotas
             this.hnota.ReadOnly = true;
             this.hnota.Width = 80;
             // 
+            // gridSemestre2
+            // 
+            this.gridSemestre2.AllowUserToAddRows = false;
+            this.gridSemestre2.AllowUserToDeleteRows = false;
+            this.gridSemestre2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gridSemestre2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSemestre2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_id,
+            this.Column1,
+            this.colCodigoUC,
+            this.eFolioA,
+            this.eFolioB,
+            this.eFolioC,
+            this.pFolio,
+            this.exames2,
+            this.nota2});
+            this.gridSemestre2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridSemestre2.Location = new System.Drawing.Point(706, 66);
+            this.gridSemestre2.MultiSelect = false;
+            this.gridSemestre2.Name = "gridSemestre2";
+            this.gridSemestre2.ReadOnly = true;
+            this.gridSemestre2.RowHeadersVisible = false;
+            this.gridSemestre2.RowTemplate.Height = 25;
+            this.gridSemestre2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridSemestre2.ShowCellToolTips = false;
+            this.gridSemestre2.ShowEditingIcon = false;
+            this.gridSemestre2.Size = new System.Drawing.Size(710, 381);
+            this.gridSemestre2.TabIndex = 12;
+            // 
             // col_id
             // 
             this.col_id.HeaderText = "id";
@@ -579,6 +460,46 @@ namespace UABNotas
             this.nota2.ReadOnly = true;
             this.nota2.Width = 80;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.SlateGray;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(706, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(710, 18);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Segundo Semestre";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.GhostWhite;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(697, 18);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Primeiro Semestre";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.lblMediaSemestre1);
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.btnAdicionaUC1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 21);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(697, 39);
+            this.panel4.TabIndex = 15;
+            // 
             // lblMediaSemestre1
             // 
             this.lblMediaSemestre1.AutoSize = true;
@@ -589,6 +510,124 @@ namespace UABNotas
             this.lblMediaSemestre1.Size = new System.Drawing.Size(58, 18);
             this.lblMediaSemestre1.TabIndex = 17;
             this.lblMediaSemestre1.Text = "Média:";
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.ImageIndex = 2;
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(36, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(38, 33);
+            this.button3.TabIndex = 12;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "sign-add-icon.png");
+            this.imageList1.Images.SetKeyName(1, "sign-error-icon.png");
+            this.imageList1.Images.SetKeyName(2, "Pencil-icon.png");
+            // 
+            // btnAdicionaUC1
+            // 
+            this.btnAdicionaUC1.FlatAppearance.BorderSize = 0;
+            this.btnAdicionaUC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionaUC1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAdicionaUC1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdicionaUC1.ImageIndex = 0;
+            this.btnAdicionaUC1.ImageList = this.imageList1;
+            this.btnAdicionaUC1.Location = new System.Drawing.Point(3, 3);
+            this.btnAdicionaUC1.Name = "btnAdicionaUC1";
+            this.btnAdicionaUC1.Size = new System.Drawing.Size(37, 33);
+            this.btnAdicionaUC1.TabIndex = 11;
+            this.btnAdicionaUC1.Tag = "1";
+            this.btnAdicionaUC1.UseVisualStyleBackColor = true;
+            this.btnAdicionaUC1.Click += new System.EventHandler(this.BtnAdicionaUC_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.button5);
+            this.panel5.Controls.Add(this.button4);
+            this.panel5.Controls.Add(this.lblMediaSemestre2);
+            this.panel5.Controls.Add(this.btnAdicionaUC2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(706, 21);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(710, 39);
+            this.panel5.TabIndex = 16;
+            // 
+            // lblMediaSemestre2
+            // 
+            this.lblMediaSemestre2.AutoSize = true;
+            this.lblMediaSemestre2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMediaSemestre2.Location = new System.Drawing.Point(586, 10);
+            this.lblMediaSemestre2.Name = "lblMediaSemestre2";
+            this.lblMediaSemestre2.Size = new System.Drawing.Size(58, 18);
+            this.lblMediaSemestre2.TabIndex = 15;
+            this.lblMediaSemestre2.Text = "Média:";
+            // 
+            // btnAdicionaUC2
+            // 
+            this.btnAdicionaUC2.FlatAppearance.BorderSize = 0;
+            this.btnAdicionaUC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionaUC2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAdicionaUC2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdicionaUC2.ImageIndex = 0;
+            this.btnAdicionaUC2.ImageList = this.imageList1;
+            this.btnAdicionaUC2.Location = new System.Drawing.Point(3, 3);
+            this.btnAdicionaUC2.Name = "btnAdicionaUC2";
+            this.btnAdicionaUC2.Size = new System.Drawing.Size(37, 33);
+            this.btnAdicionaUC2.TabIndex = 12;
+            this.btnAdicionaUC2.Tag = "2";
+            this.btnAdicionaUC2.UseVisualStyleBackColor = true;
+            this.btnAdicionaUC2.Click += new System.EventHandler(this.btnAdicionaUC2_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.ImageIndex = 1;
+            this.button2.ImageList = this.imageList1;
+            this.button2.Location = new System.Drawing.Point(73, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(38, 33);
+            this.button2.TabIndex = 18;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button4.ImageIndex = 1;
+            this.button4.ImageList = this.imageList1;
+            this.button4.Location = new System.Drawing.Point(70, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(38, 33);
+            this.button4.TabIndex = 19;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.ImageIndex = 2;
+            this.button5.ImageList = this.imageList1;
+            this.button5.Location = new System.Drawing.Point(35, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(38, 33);
+            this.button5.TabIndex = 20;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button4_Click);
             // 
             // frmMain
             // 
@@ -625,12 +664,12 @@ namespace UABNotas
 
         #endregion
 
-        
 
-        public System.Windows.Forms.Button btnAdicionaUC1;
-        public System.Windows.Forms.Button btnAdicionaUC2;
-        public System.Windows.Forms.TabControl tabAnos; // Público
-        public Button PDFexport;
+
+        private Button btnAdicionaUC1;
+        private Button btnAdicionaUC2;
+        private System.Windows.Forms.TabControl tabAnos; // Público
+        private Button PDFexport;
         private Button button1;
         private Panel panel1;
         private PictureBox pictureBox1;
@@ -652,8 +691,6 @@ namespace UABNotas
         private Panel panel5;
         
         private Label label4;
-        
-        private Label label6;
         private Label label7;
         private Label lblMediaSemestre2;
 
@@ -678,5 +715,8 @@ namespace UABNotas
         private DataGridViewTextBoxColumn exames2;
         private DataGridViewTextBoxColumn nota2;
         private Label lblMediaSemestre1;
+        private Button button2;
+        private Button button4;
+        private Button button5;
     }
 }

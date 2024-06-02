@@ -9,7 +9,12 @@ namespace UABNotas
 
     public partial class frmNovo : Form
     {
-        public string NomeUC { get; private set; }
+        
+
+        public Button BTNSalvar
+        {
+            get { return btnSalvar; }
+        }
 
         public frmNovo()
         {
@@ -18,9 +23,8 @@ namespace UABNotas
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
-          //  this.DialogResult = DialogResult.OK;
-            //this.Close();
+           
+
         }
 
         private void frmNovo_Load(object sender, EventArgs e)

@@ -8,10 +8,39 @@ using System.IO;
 
 namespace UABNotas {
     public partial class frmMain : Form {
-        private View view;
-        
+                
         public frmMain() {
             InitializeComponent();
+        }
+
+        public Button PDFexportButton
+        {
+            get { return PDFexport; }
+        }
+
+        public Button BtnAdicionaUC1
+        {
+            get { return btnAdicionaUC1; }
+        }
+
+        public Button BtnAdicionaUC2
+        {
+            get { return btnAdicionaUC2; }
+        }
+
+        public TabControl TabAnos
+        {
+            get { return tabAnos; }
+        }
+
+        public TextBox TxtNome
+        {
+            get { return txtNome; }
+        }
+
+        public TextBox TxtIDAluno
+        {
+            get { return txtIDAluno; }
         }
 
         internal View View { get; set; }
@@ -191,8 +220,9 @@ namespace UABNotas {
 
         }
 
-
-
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Em desenvolvimento", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

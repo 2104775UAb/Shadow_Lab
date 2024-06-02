@@ -37,7 +37,7 @@ namespace UABNotas
         private void PreparaMostraListaAnoSemestre()
         {
             listaSemestreAno = new List<LinhaUC>(); // Inicializar a lista
-            model.ObterLinhasUCPorAno(window.tabAnos.SelectedIndex + 1, ref listaSemestreAno);
+            model.ObterLinhasUCPorAno(window.TabAnos.SelectedIndex + 1, ref listaSemestreAno);
             window.ConstruirAnoSemestre(ref listaSemestreAno);
         }
 
@@ -47,15 +47,15 @@ namespace UABNotas
             window.View = this;
             PreparaMostraListaAnoSemestre();
             // Conectar evento de alteração de aba
-            window.tabAnos.SelectedIndexChanged += TabAnos_SelectedIndexChanged;
+            window.TabAnos.SelectedIndexChanged += TabAnos_SelectedIndexChanged;
             // Conectar o evento de validação do txtNome
             window.txtNome.Validated += TxtNome_Validated;
             window.txtIDAluno.Validated += TxtNome_Validated;
 
-            window.PDFexport.Click += OnCliquePDF;
+            window.PDFexportButton.Click += OnCliquePDF;
 
-            window.btnAdicionaUC1.Click += OnCliqueNovaUC;
-            window.btnAdicionaUC2.Click += OnCliqueNovaUC2;
+            window.BtnAdicionaUC1.Click += OnCliqueNovaUC;
+            window.BtnAdicionaUC2.Click += OnCliqueNovaUC2;
             // Mostra nas caixas de texto os dados do aluno
             MostraDadosAluno();
             window.ShowDialog();
@@ -94,13 +94,13 @@ namespace UABNotas
         //Abre novo form para adicionar uma nova unidade na lista, para o semestre 1
         protected virtual void OnCliqueNovaUC(object sender, EventArgs e)
         {
-            windowNovo.AtivarViewNovo(window.tabAnos.SelectedIndex + 1, 1, model);
+            windowNovo.AtivarViewNovo(window.TabAnos.SelectedIndex + 1, 1, model);
         }
 
         //Abre novo form para adicionar uma nova unidade na lista, para o semestre 2
         protected virtual void OnCliqueNovaUC2(object sender, EventArgs e)
         {
-            windowNovo.AtivarViewNovo(window.tabAnos.SelectedIndex + 1, 2, model);
+            windowNovo.AtivarViewNovo(window.TabAnos.SelectedIndex + 1, 2, model);
         }
 
         // Exporta PDF

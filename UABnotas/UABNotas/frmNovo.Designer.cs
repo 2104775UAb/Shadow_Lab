@@ -3,7 +3,7 @@
     partial class frmNovo
     {
         private System.ComponentModel.IContainer components = null;
-        public System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnSalvar;
 
         protected override void Dispose(bool disposing)
         {

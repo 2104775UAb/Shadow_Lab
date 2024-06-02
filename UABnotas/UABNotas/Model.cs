@@ -19,16 +19,6 @@ namespace UABNotas
             connection = conn;
         }
 
-        public void SolicitaUltimosDados(ref List<LinhaUC> ListagemSAno)
-        {
-            Console.WriteLine("SolicitaUltimosDados");
-            ListagemSAno = new List<LinhaUC>
-            {
-                /*  new ListagemSemestreAno { ID = 1, Nome = "Unidade Teste" },
-                  new ListagemSemestreAno { ID = 2, Nome = "Unidade Teste 2" },
-                  new ListagemSemestreAno { ID = 3, Nome = "Unidade Teste 3" }*/
-            };
-        }
 
 
         public void ObterLinhasUCPorAno(int ano, ref List<LinhaUC> linhas)
@@ -100,9 +90,6 @@ namespace UABNotas
                     }
                     reader.Close();
                 }
-
-                // Notificar que a lista de UCs foi atualizada
-                //ListaDeUCNovas?.Invoke();
             }
             catch (SqlException ex)
             {
